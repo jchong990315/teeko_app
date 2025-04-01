@@ -1,4 +1,4 @@
-# 5x5 Tic Tac Toe (with AI)
+# 5x5 Teeko with AI
 
 This is a **React** project featuring a 5×5 tic tac toe board. It includes:
 
@@ -39,8 +39,8 @@ This is a **React** project featuring a 5×5 tic tac toe board. It includes:
 
 1. **Clone the repository** (or create a new app with Create React App, then replace files):
    ```bash
-   git clone https://github.com/your-username/tictactoe-5x5.git
-   cd tictactoe-5x5
+   git clone https://github.com/jchong990315/teeko_app.git
+   cd teeko_app
 Install dependencies:
 npm install
 or
