@@ -1,48 +1,67 @@
-# Teeko AI Game Player
+5x5 Tic Tac Toe (with AI)
 
-An intelligent AI agent that plays **Teeko**, a two-player abstract strategy game played on a 5×5 board. This project demonstrates the use of classic AI search techniques including the **Minimax algorithm** and **heuristic evaluation**.
+This is a React project featuring a 5×5 tic tac toe board. It includes:
 
-## 🎮 How the Game Works
-- Each player has 4 pieces (Red or Black).
-- **Drop Phase**: Players take turns placing their 4 pieces on the board.
-- **Move Phase**: Once all 8 pieces are placed, players move their pieces one space at a time (including diagonals).
-- **Win Conditions**: A player wins by getting four of their pieces in:
-  - a horizontal, vertical, or diagonal line, or
-  - a 2×2 square.
+A Home screen to select difficulty (Easy/Normal/Hard) and decide who goes first (Player or AI).
+A Game screen showing a 5x5 board, where you play against an AI that uses a Minimax + Alpha-Beta algorithm.
+Custom retro-style designs for both the Home and Game pages via separate CSS files.
+Features
 
-## 🧠 AI Strategy
-- Implements the **Minimax algorithm** with a configurable depth cutoff.
-- Uses a custom **heuristic function** to evaluate non-terminal game states.
-- Supports both phases of the game: dropping and moving pieces.
-- Optimized to make decisions in **under 5 seconds**.
+Player vs. AI: The AI calculates its moves using Minimax with Alpha-Beta pruning.
+Difficulty Levels: Easy, Normal, or Hard (adjusting search depth).
+First Move Choice: Decide whether the user (Player) or the AI should start.
+Reset & Go Home: Reset the board or navigate back to the Home screen at any time.
+Victory/Draw Check: Automatically detects a winner if a row, column, or diagonal is completely filled with the same symbol.
+Retro Design: A separate CSS file (Game.css / Home.css) is used to style each page for a classic game look.
+Project Structure
 
-## 💡 Features
-- Dynamic detection of game phases.
-- Full support for all Teeko win conditions.
-- Intelligent move generation and evaluation.
-- Competes against various difficulty AIs with high win rates.
+my-app/
+├─ public/
+│  └─ index.html
+├─ src/
+│  ├─ pages/
+│  │  ├─ Home.js
+│  │  ├─ Home.css
+│  │  ├─ Game.js
+│  │  └─ Game.css
+│  ├─ App.js
+│  └─ index.js
+├─ package.json
+└─ README.md
+Key Files
+src/pages/Home.js & src/pages/Home.css: The Home screen
+Lets users select difficulty and first player.
+Navigates to /game with these settings.
+src/pages/Game.js & src/pages/Game.css: The Game screen
+Renders the 5×5 board.
+Includes the Minimax + Alpha-Beta logic in getBestMove() and alphaBeta().
+Displays the current player and shows results (Winner / Draw).
+App.js: Defines the app’s routing (Home → /, Game → /game).
+index.js: React entry point.
+Getting Started
 
-## 🛠️ Technologies
-- **Python 3**
-- Standard libraries: `random`, `copy`
+Clone the repository (or create it via create-react-app, then replace files accordingly):
+git clone https://github.com/your-username/tictactoe-5x5.git
+cd tictactoe-5x5
+Install dependencies:
+npm install
+or
 
-## 🚀 Getting Started
-1. Clone the repository.
-2. Run the game:
-   ```bash
-   python game.py
-Play against the AI or test the AI agent's performance against built-in opponents.
-📁 File Structure
+yarn
+Start the development server:
+npm start
+or
 
-game.py – Main game file with AI logic, game loop, and helper functions.
-README.md – Project overview and instructions.
-📈 Performance
+yarn start
+By default, the app runs at http://localhost:3000.
+Open your web browser and navigate to http://localhost:3000.
+Play:
+On the Home screen, choose the difficulty (Easy, Normal, Hard) and who moves first (Player or AI).
+Click Start Game to begin the match.
+Place your X (or O) on the board. The AI will respond automatically.
+Customizing Styles
 
-AI achieves:
-75%+ win rate against Easy AI
-50%+ win rate against Medium AI
-25%+ win rate against Hard AI
-🤖 Author
 
-Jun Chong
-Aspiring programmer passionate about AI and game development.
+npm run build
+Then deploy the generated build/ folder to your favorite static hosting service (Netlify, Vercel, GitHub Pages, etc.).
+
